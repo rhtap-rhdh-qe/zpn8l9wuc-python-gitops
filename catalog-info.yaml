@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zpn8l9wuc-python-gitops
+  description: This is GitOps manifest for zpn8l9wuc-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=zpn8l9wuc-python
+    backstage.io/kubernetes-id: zpn8l9wuc-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zpn8l9wuc-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zpn8l9wuc-python
